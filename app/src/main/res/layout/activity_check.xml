@@ -46,8 +46,7 @@
         </TableRow>
         <TableRow>
             <Button android:id="@+id/btnclean" android:text="清除" style="@style/Btnstyle" android:onClick="btnnum"/>
-            <Button android:id="@+id/btn0" android:text="0" style="@style/Btnstyle" android:onClick="btnnum"/>
-            <Button android:id="@+id/btnok" android:text="確認" style="@style/Btnstyle" android:onClick="btnok"/>
+            <Button android:id="@+id/btn0" android:text="0" style="@style/Btnstyle" android:layout_span="2" android:onClick="btnnum"/>
         </TableRow>
     </TableLayout>
 </RelativeLayout>

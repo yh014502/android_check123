@@ -39,18 +39,22 @@ public class checkActivity extends AppCompatActivity {
             Log.d("brad",num);
             for(int i=0;i<dataset.length;i++){
                 if(num.equals(dataset[i])){
-                    //shownum.append("恭喜中獎");
                     isGet=true;
                     Log.d("brad","OK"+dataset[i]);
                     break;
-
                 }else{
                     isGet=false;
-                    //shownum.append("再接再厲");
                     Log.d("brad","no"+dataset[i]);
                 }
             }
             shownum.append(isGet ? "恭喜中獎" : "再接再厲");
+        }else if(shownum.length()==8){
+            String lastnum=shownum.getText().toString();
+            char getnum=lastnum.charAt(7);
+            shownum.setText("");
+            shownum.append(""+getnum);
+
+
         }
     }
 

@@ -4,12 +4,21 @@
     android:layout_height="match_parent"
     android:background="@drawable/indexbg"
     android:orientation="vertical">
-<Button
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:onClick="check"
-    android:text="前往對獎"
-    />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="check"
+            android:text="前往對獎"
+            />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="viewnum"
+            android:text="本期中獎號碼"
+            />
+
 
 
 </LinearLayout>

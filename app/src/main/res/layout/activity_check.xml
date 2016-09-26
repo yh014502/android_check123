@@ -1,23 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/checkbg"
+    android:orientation="vertical"
     >
 
     <TextView
         android:id="@+id/shownum"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="55dp"
         android:layout_alignParentTop="true"
-        android:textSize="50dp"
+        android:textSize="45dp"
         android:maxLength="10"
+
+        />
+    <TextView
+        android:id="@+id/showmsg"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_alignParentTop="true"
+        android:textSize="30dp"
+        android:text="123"
 
         />
     <ListView
         android:id="@+id/list_check"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_below="@id/shownum"
         android:layout_alignParentRight="true"
         android:layout_alignParentLeft="true"
@@ -26,7 +36,7 @@
     <TableLayout
         android:id="@+id/table"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_alignParentBottom="true"
         >
         <TableRow>
@@ -49,4 +59,4 @@
             <Button android:id="@+id/btn0" android:text="0" style="@style/Btnstyle" android:layout_span="2" android:onClick="btnnum"/>
         </TableRow>
     </TableLayout>
-</RelativeLayout>
+</LinearLayout>

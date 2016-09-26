@@ -1,5 +1,6 @@
 package iii.org.tw.android_project;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -15,8 +16,9 @@ import android.widget.TextView;
 public class checkActivity extends AppCompatActivity {
     private TextView shownum;
     private ListView list_check;
-
-    private String[] dataset = {"789","524","634","678","564","755"};
+//    private String[] dataset={"123","789","579"};
+    private String[] dataset=new String[9];
+    private String[] test=new String[9];
     private MyAdapter adapter;
 
 
@@ -30,6 +32,26 @@ public class checkActivity extends AppCompatActivity {
         adapter = new MyAdapter();
         list_check.setAdapter(adapter);
 
+        Intent it =getIntent();
+        test=it.getStringArrayExtra("data12");
+
+
+
+
+        for(int i=0;i<9;i++){
+            if(i<2){
+                dataset[i] = test[i];
+            }
+            else if(i<5) {
+                dataset[i] = test[i].substring(5, 8);
+                Log.d("brad", "" + dataset[i]);
+            }else if(i<9){
+                dataset[i] = test[i];
+                Log.d("brad", "" + dataset[i]);
+            }
+        }
+
+        Log.d("brad",""+test.length);
     }
 
     private void start(){

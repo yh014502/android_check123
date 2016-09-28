@@ -39,13 +39,14 @@ public class checkActivity extends AppCompatActivity {
 
 
         for(int i=0;i<9;i++){
-            if(i<2){
+            if(i<5){
                 dataset[i] = test[i];
             }
-            else if(i<5) {
-                dataset[i] = test[i].substring(5, 8);
-                Log.d("brad", "" + dataset[i]);
-            }else if(i<9){
+//            else if(i<5) {
+//                dataset[i] = test[i].substring(5, 8);
+//                Log.d("brad", "" + dataset[i]);
+//            }
+        else if(i<9){
                 dataset[i] = test[i];
                 Log.d("brad", "" + dataset[i]);
             }
@@ -56,28 +57,41 @@ public class checkActivity extends AppCompatActivity {
 
     private void start(){
         boolean isGet = false;
-        if(shownum.length()==3){
+        if (shownum.length() == 3) {
             String num=shownum.getText().toString();
-            Log.d("brad",num);
-            for(int i=0;i<dataset.length;i++){
-                if(num.equals(dataset[i])){
-                    isGet=true;
-                    Log.d("brad","OK"+dataset[i]);
-                    break;
-                }else{
-                    isGet=false;
-                    Log.d("brad","no"+dataset[i]);
-                }
+            if(num.equals(dataset[0].substring(5,8))){
+                shownum.append("機會大獎");
+                return;
+            }
+            else if(num.equals(dataset[1].substring(5,8))){
+                shownum.append("機會特獎");
+                return;
+            }
+
+            for(int i=2;i<dataset.length;i++){
+
+               if(i<5){
+                   if(num.equals(dataset[i].substring(5,8))){
+                       isGet=true;
+                   }
+               }
+                else if(num.equals(dataset[i])){
+                   isGet=true;
+               }
+
             }
             shownum.append(isGet ? "恭喜中獎" : "再接再厲");
-        }else if(shownum.length()==8){
+
+        }
+        else if(shownum.length()==8){
             String lastnum=shownum.getText().toString();
             char getnum=lastnum.charAt(7);
             shownum.setText("");
             shownum.append(""+getnum);
-
-
         }
+
+
+
     }
 
 

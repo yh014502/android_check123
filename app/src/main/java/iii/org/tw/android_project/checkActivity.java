@@ -20,6 +20,7 @@ public class checkActivity extends AppCompatActivity {
     private String[] dataset=new String[9];
     private String[] test=new String[9];
     private MyAdapter adapter;
+    private TextView showmsg;
 
 
     @Override
@@ -28,6 +29,7 @@ public class checkActivity extends AppCompatActivity {
         setContentView(R.layout.activity_check);
         shownum=(TextView)findViewById(R.id.shownum);
         list_check=(ListView)findViewById(R.id.list_check);
+        showmsg=(TextView)findViewById(R.id.showmsg);
 
         adapter = new MyAdapter();
         list_check.setAdapter(adapter);
@@ -61,10 +63,12 @@ public class checkActivity extends AppCompatActivity {
             String num=shownum.getText().toString();
             if(num.equals(dataset[0].substring(5,8))){
                 shownum.append("機會大獎");
+                showmsg.setText("注意!!有可能中特別獎"+dataset[0]);
                 return;
             }
             else if(num.equals(dataset[1].substring(5,8))){
                 shownum.append("機會特獎");
+                showmsg.setText("注意!!有可能中特獎"+dataset[1]);
                 return;
             }
 
@@ -72,10 +76,12 @@ public class checkActivity extends AppCompatActivity {
 
                if(i<5){
                    if(num.equals(dataset[i].substring(5,8))){
+                       showmsg.setText("注意!!有可能中獎"+dataset[i]);
                        isGet=true;
                    }
                }
                 else if(num.equals(dataset[i])){
+                   showmsg.setText("恭喜獲得200元");
                    isGet=true;
                }
 
@@ -87,6 +93,7 @@ public class checkActivity extends AppCompatActivity {
             String lastnum=shownum.getText().toString();
             char getnum=lastnum.charAt(7);
             shownum.setText("");
+            showmsg.setText("");
             shownum.append(""+getnum);
         }
 
